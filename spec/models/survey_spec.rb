@@ -41,5 +41,9 @@ RSpec.describe Survey, type: :model do
       create(:response, survey: survey, answer: false)
       expect(survey.percent_yes).to eq(0)
     end
+
+    it 'returns 0 if there are no responses' do
+      expect(survey.percent_yes).to eq(0)
+    end
   end
 end

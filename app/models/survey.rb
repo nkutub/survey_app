@@ -13,7 +13,12 @@
 class Survey < ApplicationRecord
   validates :question, presence: true
 
+  has_many :responses
+
   def percent_yes
-    responses.where(answer: true).count / responses.count.to_f * 100
+    response_count = responses.count.to_f
+    return 0 if response_count.zero?
+
+    (responses.where(answer: true).count / response_count) * 100
   end
 end
