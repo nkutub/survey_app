@@ -12,4 +12,8 @@
 # Survey model
 class Survey < ApplicationRecord
   validates :question, presence: true
+
+  def percent_yes
+    responses.where(answer: true).count / responses.count.to_f * 100
+  end
 end
