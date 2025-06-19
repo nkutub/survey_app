@@ -56,16 +56,29 @@ A Ruby on Rails application for managing surveys and their responses.
   - Thorough pagination testing
   - Response form submission testing
 
-## Getting Started
 
-1. Set up the database:
+## Quick Setup Guide
+
+If you already have the required dependencies installed, here's the quick start:
+
+### Dependencies Required
+
+- Ruby 3.2.8
+- Rails 7.1.5.1
+- SQLite3
+- Node.js
+- Bundler
+
+### Three Step Setup
+
+1. Install dependencies:
 ```bash
-rails db:setup
+bundle i
 ```
 
-2. Run the test suite:
+2. Setup database:
 ```bash
-rspec
+rails db:setup
 ```
 
 3. Start the server:
