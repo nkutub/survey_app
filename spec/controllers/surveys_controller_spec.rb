@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe SurveysController, type: :controller do
   describe 'POST #create' do
     context 'with valid params' do
@@ -43,3 +46,4 @@ RSpec.describe SurveysController, type: :controller do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

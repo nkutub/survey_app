@@ -39,8 +39,12 @@
               <div class="btn-group btn-group-sm">
                 <button class="btn btn-outline-primary" 
                         data-bs-toggle="collapse" 
-                        data-bs-target="#responses-<%= survey.id %>" 
-                        aria-expanded="false">
+                        data-bs-target="#responses-<%= survey.id %>"
+                        onclick="window.location.href='<%= surveys_path(
+                          expanded_card: survey.id, 
+                          page: params[:page],
+                          anchor: "survey_#{survey.id}_responses"
+                        ) %>'">
                   View Responses
                 </button>
               </div>
@@ -48,28 +52,10 @@
           </div>
 
           <%# Collapsible Responses Section %>
-          <div class="collapse" id="responses-<%= survey.id %>">
-            <div class="card-body border-top">
-              <h6 class="mb-3">Recent Responses</h6>
-              <% survey.responses.order(created_at: :desc).limit(10).each do |response| %>
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span class="badge <%= response.yes? ? 'bg-success' : 'bg-danger' %> me-2">
-                    <%= response.answer.upcase %>
-                  </span>
-                  <small class="text-muted">
-                    <%= response.created_at.strftime('%B %d, %Y at %I:%M %p') %>
-                  </small>
-                </div>
-              <% end %>
-              
-              <% if survey.responses.count > 10 %>
-                <div class="text-center mt-3">
-                  <%= link_to "View All Responses", 
-                      survey_path(survey), 
-                      class: "btn btn-sm btn-outline-secondary" %>
-                </div>
-              <% end %>
-            </div>
+          <div class="collapse <%= 'show' if params[:expanded_card] == survey.id.to_s %>" 
+               id="responses-<%= survey.id %>" 
+               data-controller="responses">
+            <%= render 'responses', survey: survey %>
           </div>
         </div>
       </div>

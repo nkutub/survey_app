@@ -13,16 +13,20 @@
 
   <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
-        <i class="bi bi-clipboard-data me-2"></i>
-        Surveys App
-      </a>
-      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <a class="nav-link px-3" href="#">Sign out</a>
+      <div class="container-fluid">
+        <button class="navbar-toggler d-md-none order-1" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+          <i class="bi bi-clipboard-data me-2"></i>
+          Surveys App
+        </a>
+
+        <div class="navbar-nav">
+          <div class="nav-item text-nowrap">
+            <%# <a class="nav-link px-3" href="#">Sign out</a> %>
+          </div>
         </div>
       </div>
     </header>
@@ -30,21 +34,26 @@
     <div class="container-fluid">
       <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-          <div class="position-sticky pt-3 sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <%= link_to "#", class: "nav-link" do %>
-                  <i class="bi bi-clipboard-data me-2"></i>
-                  Surveys
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "#", class: "nav-link" do %>
-                  <i class="bi bi-reply-all me-2"></i>
-                  Responses
-                <% end %>
-              </li>
-            </ul>
+          <div class="position-sticky">
+            <div class="d-flex align-items-center justify-content-center py-4 border-bottom">
+              <div class="text-center">
+                <%= image_tag "logo.png", 
+                    class: "img-fluid mb-2", 
+                    style: "max-height: 80px;",
+                    alt: "Surveys App Logo" %>
+              </div>
+            </div>
+            
+            <div class="pt-3">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <%= link_to "#", class: "nav-link" do %>
+                    <i class="bi bi-clipboard-data me-2"></i>
+                    Surveys
+                  <% end %>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
 

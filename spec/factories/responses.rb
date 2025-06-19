@@ -13,14 +13,14 @@
 FactoryBot.define do
   factory :response do
     survey { create(:survey) }
-    answer { false }
+    answer { 'yes' }
   end
   factory :yes_response, class: Response do
     survey { create(:survey) }
-    answer { true }
+    answer { 'yes' }
   end
   factory :no_response, class: Response do
     survey { create(:survey) }
-    answer { false }
+    answer { 'no' }
   end
 end

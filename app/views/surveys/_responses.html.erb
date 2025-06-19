@@ -1,0 +1,67 @@
+<div class="card-body border-top" id="survey_<%= survey.id %>_responses">
+  <!-- Add Response Form -->
+  <div class="mb-4">
+    <%= form_with(model: [survey, Response.new(answer: :no)], 
+                  local: true, 
+                  class: "d-flex gap-2",
+                  data: {
+                    turbo: false
+                  }) do |f| %>
+      <div class="input-group">
+        <%= f.select :answer,
+            options_for_select(
+              [
+                ['No', :no],
+                ['Yes', :yes]
+              ],
+              :no
+            ),
+            {},
+            { 
+              class: "form-select",
+              style: "max-width: 200px;"
+            } 
+        %>
+        <%= f.submit "Submit Response", class: "btn btn-primary" %>
+      </div>
+      <%= hidden_field_tag :page, params[:page] %>
+      <%= hidden_field_tag :expanded_card, survey.id %>
+      <%= hidden_field_tag :responses_page, params[:responses_page] %>
+    <% end %>
+  </div>
+
+  <!-- Divider -->
+  <div class="d-flex align-items-center mb-3">
+    <h6 class="mb-0">Recent Responses</h6>
+    <div class="border-bottom flex-grow-1 ms-3"></div>
+  </div>
+
+  <!-- Responses List with Pagination -->
+  <% responses = survey_current_page_responses(survey) %>
+  
+  <% responses.each do |response| %>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <span class="badge <%= response.yes? ? 'bg-success' : 'bg-danger' %> me-2">
+        <%= response.answer.upcase %>
+      </span>
+      <small class="text-muted">
+        <%= survey_formated_response_created_at(response) %>
+      </small>
+    </div>
+  <% end %>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-3">
+    <% (1..responses.total_pages).each do |page_num| %>
+      <%= link_to page_num, 
+          surveys_path(
+            responses_page: page_num, 
+            survey_responses: survey.id,
+            page: params[:page],
+            expanded_card: survey.id,
+            anchor: "survey_#{survey.id}_responses"
+          ),
+          class: "btn btn-sm #{page_num == responses.current_page ? 'btn-primary' : 'btn-outline-primary'} mx-1" %>
+    <% end %>
+  </div>
+</div> 

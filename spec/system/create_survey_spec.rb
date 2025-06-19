@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
+# Creating a survey
 RSpec.describe 'Creating a survey', type: :system do
   before do
     driven_by(:rack_test)
