@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Surveys</h1>
+  <%# <%= link_to "New Survey", new_survey_path, class: "btn btn-primary" %> %>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Question</th>
+        <th scope="col">Responses</th>
+        <th scope="col">Yes %</th>
+        <th scope="col">Created</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @surveys.each do |survey| %>
+        <tr>
+          <td><%= survey.question %></td>
+          <td><%= survey.responses.count %></td>
+          <td><%= survey_formated_yes_percentage(survey) %></td>
+          <td><%= survey_formated_created_at(survey) %></td>
+          <td>
+            <div class="btn-group btn-group-sm">
+              <%= link_to "View", survey_path(survey), class: "btn btn-outline-primary" %>
+              <%= link_to "Edit", edit_survey_path(survey), class: "btn btn-outline-secondary" %>
+              <%= link_to "Delete", survey_path(survey), 
+                    method: :delete, 
+                    class: "btn btn-outline-danger",
+                    data: { confirm: "Are you sure?" } %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      <% if @surveys.empty? %>
+        <tr>
+          <td colspan="5" class="text-center">No surveys found</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

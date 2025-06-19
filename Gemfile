@@ -47,11 +47,12 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap', '~> 5.3.0'
-gem 'dartsass-rails'
+gem 'sassc-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'database_cleaner'
+  gem 'byebug'
   gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails'
   gem 'faker'
@@ -65,6 +66,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
+  gem 'solargraph'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -73,8 +76,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'solargraph'
-  gem 'annotate'
 end
 
 group :test do

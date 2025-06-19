@@ -1,35 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/workspaces/surveys-app/spec/models/response_spec.rb": {
+      "/workspaces/surveys-app/spec/helpers/surveys_helper_spec.rb": {
         "lines": [
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
           null,
           1,
           1,
-          2,
-          null,
-          null,
           1,
           1,
           1,
           null,
           null,
+          null,
           1,
           1,
           1,
+          1,
+          null,
           null,
           null
         ]
@@ -107,7 +97,17 @@
           null,
           1,
           1,
-          7,
+          8,
+          null,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -115,6 +115,55 @@
       "/workspaces/surveys-app/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/workspaces/surveys-app/app/helpers/surveys_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/workspaces/surveys-app/spec/models/response_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -168,6 +217,7 @@
           1,
           null,
           null,
+          null,
           null
         ]
       },
@@ -191,15 +241,69 @@
           1,
           null,
           1,
-          5,
+          6,
+          6,
+          null,
           5,
           null,
-          4,
+          null
+        ]
+      },
+      "/workspaces/surveys-app/spec/requests/surveys_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/workspaces/surveys-app/spec/views/surveys/index.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          2,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/workspaces/surveys-app/app/controllers/surveys_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1750276234
+    "timestamp": 1750295976
   }
 }
