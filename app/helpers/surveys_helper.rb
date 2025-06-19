@@ -7,6 +7,6 @@ module SurveysHelper
   end
 
   def survey_formated_created_at(survey)
-    survey.created_at.strftime('%B %d, %Y')
+    survey.created_at.strftime('%B %d, %Y at %I:%M %p')
   end
 end

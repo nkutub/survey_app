@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <%= form_with(model: Survey.new, local: true, class: "row g-3") do |f| %>
+      <div class="col-12">
+        <%= f.label :question, "Enter your yes/no question", class: "form-label" %>
+        <%= f.text_area :question, 
+            class: "form-control mb-3", 
+            rows: 3,
+            placeholder: "Type your question here...",
+            required: false,
+            'aria-label': "Survey question" %>
+        <% if f.object.errors[:question].any? %>
+          <div class="invalid-feedback d-block mb-3">
+            <%= f.object.errors[:question].join(", ") %>
+          </div>
+        <% end %>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <%= f.submit "Create Survey", class: "btn btn-primary px-4" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> 

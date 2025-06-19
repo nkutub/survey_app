@@ -11,9 +11,11 @@
 #
 # Survey model
 class Survey < ApplicationRecord
-  validates :question, presence: true
+  # Add Kaminari pagination
+  paginates_per 6
 
-  has_many :responses
+  has_many :responses, dependent: :destroy
+  validates :question, presence: true
 
   def percent_yes
     return 0 if responses.none?
