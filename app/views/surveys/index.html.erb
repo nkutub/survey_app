@@ -25,11 +25,11 @@
                 <small class="text-muted">Responses</small>
               </div>
               <div class="col border-start">
-                <div class="fw-bold text-success"><%= survey_formated_yes_percentage(survey) %></div>
+                <div class="fw-bold text-success"><%= survey_formatted_yes_percentage(survey) %></div>
                 <small class="text-muted">Yes %</small>
               </div>
               <div class="col border-start">
-                <div class="fw-bold text-danger"><%= survey_formated_no_percentage(survey) %></div>
+                <div class="fw-bold text-danger"><%= survey_formatted_no_percentage(survey) %></div>
                 <small class="text-muted">No %</small>
               </div>
             </div>
@@ -38,7 +38,7 @@
           <div class="card-footer bg-transparent">
             <div class="d-flex justify-content-between align-items-center">
               <small class="text-muted">
-                <%= survey_formated_created_at(survey) %>
+                <%= survey_formatted_created_at(survey) %>
               </small>
               <div class="btn-group btn-group-sm">
                 <button class="btn btn-outline-primary" 

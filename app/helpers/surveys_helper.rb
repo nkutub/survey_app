@@ -2,19 +2,19 @@
 
 # SurveysHelper
 module SurveysHelper
-  def survey_formated_yes_percentage(survey)
+  def survey_formatted_yes_percentage(survey)
     number_to_percentage(survey.percent_yes, precision: 1)
   end
 
-  def survey_formated_no_percentage(survey)
+  def survey_formatted_no_percentage(survey)
     number_to_percentage(survey.percent_no, precision: 1)
   end
 
-  def survey_formated_created_at(survey)
+  def survey_formatted_created_at(survey)
     survey.created_at.strftime('%B %d, %Y at %I:%M %p')
   end
 
-  def survey_formated_response_created_at(response)
+  def survey_formatted_response_created_at(response)
     response.created_at.strftime('%B %d, %Y at %I:%M %p')
   end
 
