@@ -22,4 +22,10 @@ class Survey < ApplicationRecord
 
     (responses.yes.count.to_f / responses.count * 100).round(2)
   end
+
+  def percent_no
+    return 0 if responses.none?
+
+    (responses.no.count.to_f / responses.count * 100).round(2)
+  end
 end

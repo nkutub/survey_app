@@ -68,7 +68,7 @@ SURVEY_QUESTIONS = [
   "to ensure effective team collaboration.\n\n" \
   "Question:\n" \
   'Are these channels sufficient for your needs?'
-]
+].freeze
 
 # Create surveys with responses
 SURVEY_QUESTIONS.each do |question|

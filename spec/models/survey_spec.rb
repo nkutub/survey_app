@@ -46,5 +46,14 @@ RSpec.describe Survey, type: :model do
       expect(survey.percent_yes).to eq(0)
     end
   end
+
+  describe 'percent_no' do
+    let(:survey) { create(:survey) }
+
+    it 'returns the percentage of no responses for 100% no' do
+      create(:response, survey: survey, answer: :no)
+      expect(survey.percent_no).to eq(100)
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength

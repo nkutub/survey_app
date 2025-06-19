@@ -48,6 +48,7 @@ RSpec.describe 'surveys/index', type: :view do
     it 'shows survey statistics' do
       expect(rendered).to have_content('Responses')
       expect(rendered).to have_content('Yes %')
+      expect(rendered).to have_content('No %')
       expect(rendered).to have_selector("button[data-bs-toggle='collapse']", text: 'View Responses')
     end
 

@@ -23,4 +23,14 @@ FactoryBot.define do
       ]
     end
   end
+
+  trait :survey_with_50_percent_no do
+    question { 'Is your favorite color blue?' }
+    responses do
+      [
+        create(:response, survey: instance, answer: :no),
+        create(:response, survey: instance, answer: :yes)
+      ]
+    end
+  end
 end

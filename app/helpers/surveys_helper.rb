@@ -6,6 +6,10 @@ module SurveysHelper
     number_to_percentage(survey.percent_yes, precision: 1)
   end
 
+  def survey_formated_no_percentage(survey)
+    number_to_percentage(survey.percent_no, precision: 1)
+  end
+
   def survey_formated_created_at(survey)
     survey.created_at.strftime('%B %d, %Y at %I:%M %p')
   end

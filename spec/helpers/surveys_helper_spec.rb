@@ -10,6 +10,13 @@ RSpec.describe SurveysHelper, type: :helper do
     end
   end
 
+  describe 'survey_formated_no_percentage' do
+    it 'should return the percentage of no responses' do
+      survey = create(:survey, :survey_with_50_percent_no)
+      expect(helper.survey_formated_no_percentage(survey)).to eq('50.0%')
+    end
+  end
+
   describe 'survey_formated_created_at' do
     it 'should return the formatted created at date' do
       survey = create(:survey, created_at: Time.zone.local(2021, 1, 1, 1, 0, 0))
