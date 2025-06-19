@@ -20,25 +20,25 @@ RSpec.describe Survey, type: :model do
     let(:survey) { create(:survey) }
 
     it 'returns the percentage of yes responses for 100% yes' do
-      create(:response, survey: survey, answer: true)
+      create(:response, survey: survey, answer: :yes)
       expect(survey.percent_yes).to eq(100)
     end
 
     it 'returns the percentage of yes responses for 50% yes' do
-      create(:response, survey: survey, answer: true)
-      create(:response, survey: survey, answer: false)
+      create(:response, survey: survey, answer: :yes)
+      create(:response, survey: survey, answer: :no)
       expect(survey.percent_yes).to eq(50)
     end
 
     it 'returns the percentage of yes responses for fraction of yes' do
-      create(:response, survey: survey, answer: true)
-      create(:response, survey: survey, answer: true)
-      create(:response, survey: survey, answer: false)
+      create(:response, survey: survey, answer: :yes)
+      create(:response, survey: survey, answer: :yes)
+      create(:response, survey: survey, answer: :no)
       expect(survey.percent_yes).to be_within(0.01).of(66.67)
     end
 
     it 'returns the percentage of yes responses for 0% yes' do
-      create(:response, survey: survey, answer: false)
+      create(:response, survey: survey, answer: :no)
       expect(survey.percent_yes).to eq(0)
     end
 

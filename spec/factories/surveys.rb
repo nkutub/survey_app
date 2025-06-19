@@ -18,8 +18,8 @@ FactoryBot.define do
     question { 'Is your favorite color blue?' }
     responses do
       [
-        create(:response, survey: instance, answer: true),
-        create(:response, survey: instance, answer: false)
+        create(:response, survey: instance, answer: :yes),
+        create(:response, survey: instance, answer: :no)
       ]
     end
   end

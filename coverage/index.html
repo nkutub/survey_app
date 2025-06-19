@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-06-19T01:19:36+00:00">2025-06-19T01:19:36+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-06-19T01:27:21+00:00">2025-06-19T01:27:21+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,7 +29,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.32
+         1.27
        </span>
     </span> hits/line
     )
@@ -116,9 +116,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#73115f87892074f8b79359f1a1e9e0358f091954" class="src_link" title="app/models/response.rb">app/models/response.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -127,11 +127,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#c1aa2fc993ed47c2a8902143979c86bc1e72a0ae" class="src_link" title="app/models/survey.rb">app/models/survey.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">3.00</td>
+            <td class="cell--number">2.50</td>
             
           </tr>
         
@@ -639,8 +639,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -737,7 +737,7 @@
 
             
 
-            <code class="ruby">#  answer     :boolean</code>
+            <code class="ruby">#  answer     :integer</code>
           </li>
         </div>
       
@@ -806,19 +806,81 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
             
               <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  validates :answer, inclusion: { in: [true, false] }</code>
+            <code class="ruby">  enum answer: {</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="18">
+            
+
+            
+
+            <code class="ruby">    no: 0,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+
+            
+
+            <code class="ruby">    yes: 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+
+            
+
+            <code class="ruby">  }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  validates :answer, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
             
 
             
@@ -846,8 +908,8 @@
     
 
     <div class="t-line-summary">
-      <b>7</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1054,24 +1116,12 @@
 
             
 
-            <code class="ruby">    response_count = responses.count.to_f</code>
+            <code class="ruby">    return 0 if responses.none?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="20">
-            
-              <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    return 0 if response_count.zero?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="20">
             
 
             
@@ -1081,19 +1131,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="22">
+          <li class="covered" data-hits="5" data-linenumber="21">
             
               <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    (responses.where(answer: true).count / response_count) * 100</code>
+            <code class="ruby">    (responses.yes.count.to_f / responses.count * 100).round(2)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="22">
             
 
             
@@ -1103,7 +1153,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="23">
             
 
             
@@ -1674,7 +1724,7 @@
 
             
 
-            <code class="ruby">        create(:response, survey: instance, answer: true),</code>
+            <code class="ruby">        create(:response, survey: instance, answer: :yes),</code>
           </li>
         </div>
       
@@ -1684,7 +1734,7 @@
 
             
 
-            <code class="ruby">        create(:response, survey: instance, answer: false)</code>
+            <code class="ruby">        create(:response, survey: instance, answer: :no)</code>
           </li>
         </div>
       
@@ -2583,7 +2633,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: true)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :yes)</code>
           </li>
         </div>
       
@@ -2639,7 +2689,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: true)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :yes)</code>
           </li>
         </div>
       
@@ -2651,7 +2701,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: false)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :no)</code>
           </li>
         </div>
       
@@ -2707,7 +2757,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: true)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :yes)</code>
           </li>
         </div>
       
@@ -2719,7 +2769,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: true)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :yes)</code>
           </li>
         </div>
       
@@ -2731,7 +2781,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: false)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :no)</code>
           </li>
         </div>
       
@@ -2787,7 +2837,7 @@
 
             
 
-            <code class="ruby">      create(:response, survey: survey, answer: false)</code>
+            <code class="ruby">      create(:response, survey: survey, answer: :no)</code>
           </li>
         </div>
       

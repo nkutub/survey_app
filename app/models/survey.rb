@@ -16,9 +16,8 @@ class Survey < ApplicationRecord
   has_many :responses
 
   def percent_yes
-    response_count = responses.count.to_f
-    return 0 if response_count.zero?
+    return 0 if responses.none?
 
-    (responses.where(answer: true).count / response_count) * 100
+    (responses.yes.count.to_f / responses.count * 100).round(2)
   end
 end
